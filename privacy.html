@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>سياسة الخصوصية — كتيب</title>
+  <style>
+    :root {
+      --bg: #f7f7f9;
+      --surface: #ffffff;
+      --text: #1a1a1a;
+      --muted: #666;
+      --accent: #6c4fe0;
+      --border: #e8e8ec;
+      --radius: 14px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111118;
+        --surface: #1e1e28;
+        --text: #f0f0f4;
+        --muted: #999;
+        --border: #2e2e3a;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 16px;
+      padding: 24px 16px;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      padding: 40px 24px 32px;
+    }
+    .logo {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 22px;
+      font-weight: 800;
+      padding: 10px 28px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+    header h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    header p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 28px;
+      margin-bottom: 16px;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    p { margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+    ul {
+      margin: 8px 0 12px 0;
+      padding-right: 20px;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    .highlight {
+      background: rgba(108, 79, 224, 0.07);
+      border-right: 3px solid var(--accent);
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin: 14px 0;
+      font-size: 15px;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(46, 158, 91, 0.12);
+      color: #2e9e5b;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 32px 0 24px;
+    }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">كتيب</div>
+    <h1>سياسة الخصوصية</h1>
+    <p>آخر تحديث: يونيو ٢٠٢٦</p>
+  </header>
+
+  <div class="card">
+    <div class="badge">مقدّمة</div>
+    <p>
+      تطبيق <strong>كتيب</strong> يساعدك على توثيق صيانة سيارتك بشكل رقمي وتحويل سجلّها
+      إلى جواز سفر يرفع قيمتها عند البيع. نحن ندرك أن بياناتك ملكٌ لك، ونلتزم بحمايتها
+      وفق نظام حماية البيانات الشخصية (PDPL) الصادر في المملكة العربية السعودية.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>أولاً: البيانات التي نجمعها</h2>
+    <p>نجمع فقط ما هو ضروري لتشغيل الخدمة:</p>
+    <ul>
+      <li><strong>بيانات الحساب:</strong> عنوان البريد الإلكتروني المستخدَم للتسجيل.</li>
+      <li><strong>بيانات السيارة:</strong> الماركة، الموديل، سنة الصنع، رقم اللوحة، قراءة العداد.</li>
+      <li><strong>سجلات الصيانة:</strong> تاريخ الخدمة، قراءة العداد، نوع الخدمة، اسم المركز، ملاحظات.</li>
+      <li><strong>صور الفواتير:</strong> الصور التي تختار إرفاقها بسجلاتك — تُخزَّن في خزانتك الخاصة المحمية فقط.</li>
+      <li><strong>تفضيلات العرض:</strong> اختيار التقويم (هجري/ميلادي) ونمط المظهر.</li>
+    </ul>
+    <div class="highlight">
+      لا نجمع بيانات الموقع الجغرافي ولا جهات الاتصال ولا أي بيانات غير مرتبطة
+      بصيانة سيارتك.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>ثانياً: كيف نعالج بياناتك</h2>
+
+    <p><strong>معالجة صور الفواتير (OCR):</strong></p>
+    <p>
+      عند مسح فاتورة صيانة، ترسَل صورة مضغوطة مؤقتاً إلى خدمة ذكاء اصطناعي
+      (Gemini Flash من Google) لاستخراج البيانات النصية — التاريخ، العداد، نوع الخدمة.
+      <strong>لا تُحفظ هذه الصورة على خوادمنا بعد الاستخراج.</strong> نستخدم Google Gemini
+      بإعداد لا يحتفظ بالبيانات (zero-data-retention) ما أمكن.
+    </p>
+    <p>
+      صورة الفاتورة التي تختار إرفاقها بسجلّك المحفوظ تُخزَّن في خزانتك الخاصة في
+      Supabase (بُنية سحابية مستضافة في منطقة الشرق الأوسط)، ولا يمكن الوصول إليها
+      إلا من حسابك عبر روابط مؤقتة مشفّرة.
+    </p>
+
+    <p><strong>تخزين البيانات:</strong></p>
+    <ul>
+      <li>جميع بياناتك مخزَّنة على خوادم Supabase في منطقة <strong>الشرق الأوسط</strong>.</li>
+      <li>الاتصال مشفَّر بالكامل (HTTPS/TLS).</li>
+      <li>لا يُشارَك أي وصول لبياناتك مع أطراف ثالثة خارج نطاق تشغيل الخدمة.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>ثالثاً: لا نبيع بياناتك</h2>
+    <div class="highlight">
+      نحن لا نبيع بياناتك الشخصية ولا نؤجّرها ولا نتاجر بها لأي طرف ثالث،
+      تحت أي ظرف.
+    </div>
+    <p>
+      البيانات التي نشاركها مقتصرة على ما هو ضروري لتشغيل الخدمة:
+    </p>
+    <ul>
+      <li><strong>Supabase:</strong> قاعدة البيانات، المصادقة، تخزين الملفات (موفّر البنية التحتية).</li>
+      <li><strong>Google Gemini (OCR فقط):</strong> مؤقتاً لاستخراج النصوص من الفواتير — لا تُحفظ الصور.</li>
+    </ul>
+    <p>
+      لا نشارك بيانات السيارة أو سجلات الصيانة أو معلومات حسابك مع أي جهة تسويقية
+      أو تجارية.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>رابعاً: حقوقك وفق PDPL</h2>
+    <p>بموجب نظام حماية البيانات الشخصية السعودي، يحق لك:</p>
+    <ul>
+      <li><strong>الاطلاع:</strong> طلب نسخة من بياناتك المخزَّنة.</li>
+      <li><strong>التصحيح:</strong> تعديل أي بيانات غير دقيقة مباشرةً من التطبيق.</li>
+      <li><strong>الحذف:</strong> حذف حسابك وجميع بياناتك بشكل دائم — يُنجَز خلال ٣٠ يوماً من طلبك.</li>
+      <li><strong>سحب الموافقة:</strong> يمكنك سحب موافقتك على معالجة الصور عبر السحابة في أي وقت من
+          إعدادات التطبيق، وسيعمل التطبيق بالإدخال اليدوي فقط.</li>
+    </ul>
+    <div class="highlight">
+      لحذف حسابك وكل بياناتك، أرسل طلبك إلى عنوان التواصل أدناه.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>خامساً: مدة الاحتفاظ بالبيانات</h2>
+    <ul>
+      <li>تُحفظ بيانات حسابك وسياراتك وسجلاتك طالما حسابك نشط.</li>
+      <li>عند حذف حسابك، تُحذف جميع البيانات بشكل دائم خلال ٣٠ يوماً.</li>
+      <li>صور الفواتير المؤقتة للمعالجة (OCR) لا تُحفظ بعد الاستخراج.</li>
+      <li>روابط تقارير البيع المُنشأة تنتهي تلقائياً بعد ٣٠ يوماً من إنشائها.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>سادساً: أمن البيانات</h2>
+    <p>
+      نطبّق معايير أمن صناعية: تشفير البيانات أثناء النقل (TLS) وفي التخزين،
+      عزل بيانات كل مستخدم عبر سياسات أمان الصفوف (RLS)، وصلاحيات وصول محدودة.
+      صور الفواتير مخزَّنة في حاويات خاصة (private buckets) لا يمكن الوصول إليها
+      مباشرةً — فقط عبر روابط مؤقتة مشفّرة تُنشَأ لطلبك أنت.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>سابعاً: التواصل معنا</h2>
+    <p>
+      لأي استفسار عن خصوصيتك، أو لممارسة حقوقك، أو لطلب حذف بياناتك، تواصل معنا على:
+    </p>
+    <p>
+      <strong>البريد الإلكتروني:</strong>
+      <a href="mailto:privacy@kutayp.app">privacy@kutayp.app</a>
+      <!-- TODO: استبدل بعنوان البريد الفعلي قبل النشر -->
+    </p>
+    <p>
+      نلتزم بالردّ خلال <strong>١٤ يوم عمل</strong> من استلام طلبك.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>ثامناً: تعديلات على هذه السياسة</h2>
+    <p>
+      قد نُحدّث هذه السياسة من وقت لآخر. سنُبلّغك بأي تغييرات جوهرية عبر إشعار
+      داخل التطبيق قبل سريانها بـ ١٤ يوماً. استمرارك في استخدام التطبيق بعد
+      التحديث يُعدّ موافقةً على السياسة المُحدَّثة.
+    </p>
+  </div>
+
+  <footer>
+    <p>كتيب — جواز سفر سيارتك الرقمي</p>
+    <p style="margin-top: 6px;">
+      <a href="terms.html">شروط الاستخدام</a>
+    </p>
+  </footer>
+</div>
+</body>
+</html>
