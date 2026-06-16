@@ -12,6 +12,9 @@
   <meta property="og:locale" content="ar_SA" />
   <meta property="og:title" content="كتيب — سجل صيانة سيارتك الرقمي" />
   <meta property="og:description" content="وثّق صيانة سيارتك رقمياً وارفع قيمتها عند البيع بسجل موثوق." />
+  <meta property="og:image" content="images/logo.png" />
+  <link rel="icon" href="images/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="images/logo.png" />
 
   <style>
     :root {
@@ -79,13 +82,11 @@
       padding: 22px 0;
     }
     .brand { display: flex; align-items: center; gap: 12px; }
-    .brand .mark {
+    .brand .logo {
       width: 44px; height: 44px;
       border-radius: 13px;
-      background: linear-gradient(150deg, var(--accent) 0%, var(--accent-strong) 100%);
-      color: #fff;
-      font-weight: 800; font-size: 24px;
-      display: flex; align-items: center; justify-content: center;
+      display: block;
+      object-fit: cover;
       box-shadow: var(--shadow-soft);
     }
     .brand .name { font-weight: 800; font-size: 20px; letter-spacing: -0.2px; }
@@ -311,11 +312,11 @@
     /* ---------- Footer ---------- */
     footer { padding: 44px 0 56px; text-align: center; }
     .foot-brand { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 16px; }
-    .foot-brand .mark {
-      width: 34px; height: 34px; border-radius: 10px;
-      background: linear-gradient(150deg, var(--accent), var(--accent-strong));
-      color: #fff; font-weight: 800; font-size: 18px;
-      display: flex; align-items: center; justify-content: center;
+    .foot-brand .logo {
+      width: 34px; height: 34px;
+      border-radius: 10px;
+      display: block;
+      object-fit: cover;
     }
     .foot-links { display: flex; flex-wrap: wrap; gap: 6px 22px; justify-content: center; margin-bottom: 16px; }
     .foot-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 600; transition: color .15s ease; }
@@ -344,7 +345,7 @@
   <!-- Nav -->
   <nav>
     <div class="brand">
-      <div class="mark">ك</div>
+      <img class="logo" src="images/logo.png" alt="كتيب" width="44" height="44" />
       <div class="name">كتيب</div>
     </div>
     <a class="nav-cta" href="#download">حمّل التطبيق</a>
@@ -353,11 +354,11 @@
   <!-- Hero -->
   <header class="hero">
     <div class="hero-copy">
-      <span class="eyebrow"><span class="dot"></span> دفتر صيانة سيارتك — رقمي</span>
-      <h1>تاريخ صيانة سيارتك،<br /><span class="hl">موثّق ويصعب تزويره</span></h1>
+      <span class="eyebrow"><span class="dot"></span> كتيب صيانة سيارتك الرقمي</span>
+      <h1>تاريخ صيانة سيارتك،<br /><span class="hl">محفوظ ومنظم في مكان واحد</span></h1>
       <p class="lead">
         صوّر فاتورة الصيانة، ودع «كتيب» يبني سجلاً واضحاً لسيارتك خطوةً بخطوة.
-        سجلٌ تراكمي يطمئن المشتري ويرفع قيمة سيارتك يوم تبيعها.
+        سجلٌ تراكمي يطمئن المشتري ويرفع قيمة سيارتك عند البيع.
       </p>
       <div class="cta-row">
         <a class="btn" id="download" href="#">
@@ -515,7 +516,7 @@
   <!-- Footer -->
   <footer>
     <div class="foot-brand">
-      <div class="mark">ك</div>
+      <img class="logo" src="images/logo.png" alt="كتيب" width="34" height="34" />
       <strong>كتيب</strong>
     </div>
     <div class="foot-links">
