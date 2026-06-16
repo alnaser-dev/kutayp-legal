@@ -1,20 +1,312 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>دعم كتيب</title>
-<style>
-  body { font-family: -apple-system, Arial, sans-serif; max-width: 600px; margin: 60px auto; padding: 0 24px; color: #1a1a2e; line-height: 1.8; }
-  h1 { color: #6C4FE0; }
-  a { color: #6C4FE0; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#6C4FE0" />
+  <title>الدعم والمساعدة — كتيب</title>
+  <meta name="description" content="مركز دعم تطبيق كتيب: أجوبة الأسئلة الشائعة حول التوثيق وذاكرة الزيت وتقرير البيع والخصوصية، وطريقة التواصل معنا." />
+  <link rel="icon" href="images/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="images/logo.png" />
+  <style>
+    :root {
+      --accent: #6C4FE0;
+      --accent-strong: #5a3fd0;
+      --accent-soft: rgba(108, 79, 224, 0.08);
+      --accent-ring: rgba(108, 79, 224, 0.16);
+      --bg-grad-a: #efeafc;
+      --bg-grad-b: #f6f5fb;
+      --surface: #ffffff;
+      --surface-2: #faf9ff;
+      --text: #16142a;
+      --muted: #5f5d72;
+      --faint: #9b99ad;
+      --border: #ebe9f4;
+      --radius: 18px;
+      --radius-lg: 26px;
+      --shadow-soft: 0 12px 32px -16px rgba(74, 54, 160, 0.28);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --accent: #8a72f0;
+        --accent-strong: #9b86f5;
+        --accent-soft: rgba(138, 114, 240, 0.14);
+        --accent-ring: rgba(138, 114, 240, 0.22);
+        --bg-grad-a: #14111f;
+        --bg-grad-b: #0c0c12;
+        --surface: #16151f;
+        --surface-2: #1c1b27;
+        --text: #f1f0f6;
+        --muted: #a7a5b8;
+        --faint: #6f6d80;
+        --border: #262532;
+        --shadow-soft: 0 12px 32px -16px rgba(0, 0, 0, 0.6);
+      }
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, "SF Pro Text", "Segoe UI", Tahoma, Arial, sans-serif;
+      background:
+        radial-gradient(120% 80% at 80% -10%, var(--accent-soft) 0%, transparent 55%),
+        linear-gradient(180deg, var(--bg-grad-a) 0%, var(--bg-grad-b) 40%);
+      color: var(--text);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand .logo { width: 44px; height: 44px; border-radius: 13px; display: block; object-fit: cover; box-shadow: var(--shadow-soft); }
+    .brand .name { font-weight: 800; font-size: 20px; letter-spacing: -0.2px; }
+    .nav-cta {
+      display: inline-flex; align-items: center;
+      background: var(--surface); border: 1px solid var(--border); color: var(--text);
+      padding: 9px 18px; border-radius: 999px; font-size: 14px; font-weight: 700;
+      text-decoration: none; transition: transform .15s ease, border-color .15s ease;
+    }
+    .nav-cta:hover { transform: translateY(-1px); border-color: var(--accent-ring); }
+
+    /* Header */
+    header.page { text-align: center; padding: 40px 0 28px; }
+    header.page .kicker { color: var(--accent); font-weight: 800; font-size: 14px; letter-spacing: 0.4px; }
+    header.page h1 { font-size: clamp(28px, 4.5vw, 38px); font-weight: 800; letter-spacing: -0.5px; margin: 8px 0 12px; }
+    header.page p { color: var(--muted); font-size: 17px; max-width: 520px; margin: 0 auto; }
+
+    /* Contact cards */
+    .contact { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 8px 0 40px; }
+    .ccard {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 26px 24px;
+      box-shadow: var(--shadow-soft); text-decoration: none; color: inherit;
+      transition: transform .18s ease, border-color .18s ease;
+    }
+    .ccard:hover { transform: translateY(-3px); border-color: var(--accent-ring); }
+    .ccard .ic {
+      width: 48px; height: 48px; border-radius: 14px;
+      background: var(--accent-soft); color: var(--accent);
+      display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+    }
+    .ccard .ic svg { width: 24px; height: 24px; }
+    .ccard b { display: block; font-size: 17px; font-weight: 800; margin-bottom: 4px; }
+    .ccard span { color: var(--muted); font-size: 14px; }
+    .ccard .val { display: block; color: var(--accent); font-weight: 700; font-size: 15px; margin-top: 8px; direction: ltr; text-align: right; }
+
+    /* Section heading */
+    .sec-title { font-size: 22px; font-weight: 800; letter-spacing: -0.3px; margin: 8px 0 18px; }
+
+    /* FAQ */
+    .faq { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
+    details {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 4px 20px;
+      transition: border-color .15s ease;
+    }
+    details[open] { border-color: var(--accent-ring); }
+    summary {
+      list-style: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between; gap: 14px;
+      padding: 16px 0; font-size: 16px; font-weight: 700;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary .chev {
+      flex-shrink: 0; width: 22px; height: 22px; color: var(--accent);
+      transition: transform .2s ease;
+    }
+    details[open] summary .chev { transform: rotate(180deg); }
+    details .answer { color: var(--muted); font-size: 15px; padding: 0 0 18px; }
+    details .answer a { color: var(--accent); }
+
+    /* Quick links */
+    .links {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 24px 26px; margin-bottom: 40px;
+    }
+    .links h2 { font-size: 16px; font-weight: 800; margin-bottom: 14px; }
+    .links-row { display: flex; flex-wrap: wrap; gap: 10px 22px; }
+    .links-row a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 700; transition: color .15s ease; }
+    .links-row a:hover { color: var(--accent); }
+
+    /* Footer */
+    footer { padding: 12px 0 56px; text-align: center; }
+    .foot-brand { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .foot-brand .logo { width: 34px; height: 34px; border-radius: 10px; display: block; object-fit: cover; }
+    .foot-links { display: flex; flex-wrap: wrap; gap: 6px 22px; justify-content: center; margin-bottom: 14px; }
+    .foot-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 600; transition: color .15s ease; }
+    .foot-links a:hover { color: var(--accent); }
+    .copy { color: var(--faint); font-size: 13px; }
+
+    @media (max-width: 560px) {
+      .contact { grid-template-columns: 1fr; }
+      .nav-cta { display: none; }
+    }
+  </style>
 </head>
 <body>
-<h1>دعم كتيب</h1>
-<p>لأي استفسار أو مشكلة، تواصل معنا على:</p>
-<p><a href="mailto:hello@alnaser.dev">hello@alnaser.dev</a></p>
-<p>نرد خلال ٢٤-٤٨ ساعة.</p>
-<p><a href="privacy.html">سياسة الخصوصية</a> · <a href="terms.html">شروط الاستخدام</a></p>
+<div class="wrap">
+
+  <!-- Nav -->
+  <nav>
+    <a class="brand" href="index.html" style="text-decoration:none;color:inherit">
+      <img class="logo" src="images/logo.png" alt="كتيب" width="44" height="44" />
+      <span class="name">كتيب</span>
+    </a>
+    <a class="nav-cta" href="index.html">الصفحة الرئيسية</a>
+  </nav>
+
+  <!-- Header -->
+  <header class="page">
+    <span class="kicker">مركز المساعدة</span>
+    <h1>كيف نقدر نساعدك؟</h1>
+    <p>أجوبة لأكثر الأسئلة شيوعاً عن كتيب، وطرق التواصل المباشر معنا متى احتجت.</p>
+  </header>
+
+  <!-- Contact -->
+  <div class="contact">
+    <a class="ccard" href="mailto:hello@alnaser.dev">
+      <div class="ic">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+      </div>
+      <b>راسلنا عبر البريد</b>
+      <span>للاستفسارات والدعم التقني وطلبات الخصوصية.</span>
+      <span class="val">hello@alnaser.dev</span>
+    </a>
+    <a class="ccard" href="mailto:hello@alnaser.dev?subject=بلاغ عن مشكلة في تطبيق كتيب">
+      <div class="ic">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <b>أبلغ عن مشكلة</b>
+      <span>واجهتك مشكلة تقنية؟ أرسل لنا وصفاً وسنتابعها.</span>
+      <span class="val">فتح بريد جديد ↩</span>
+    </a>
+  </div>
+
+  <!-- FAQ -->
+  <h2 class="sec-title">الأسئلة الشائعة</h2>
+  <div class="faq">
+
+    <details open>
+      <summary>
+        كيف أوثّق سجل صيانة؟
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        افتح التطبيق واختر سيارتك، ثم اضغط زر التصوير وصوّر فاتورة الصيانة. يستخرج كتيب التاريخ
+        والعداد ونوع الخدمة تلقائياً، تراجعها وتصحّحها إن لزم، ثم تؤكد الحفظ — ويصبح السجل موثّقاً.
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        ما الفرق بين السجل اليدوي والسجل الموثّق؟
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        السجل اليدوي إدخال شخصي يمكنك تعديله أو حذفه في أي وقت. أما السجل الموثّق — المثبَّت بصورة
+        فاتورة — فيصبح محصّناً لا يُعدَّل ولا يُحذف، وهذه ميزة مقصودة تحفظ مصداقية تاريخ سيارتك
+        وتمنع التزوير.
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        لماذا لا أستطيع تعديل سجل بعد توثيقه؟
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        لأن قيمة كتيب تكمن في كونه سجلاً موثوقاً يصعب تزويره. لو أمكن تعديل سجل موثّق لاحقاً لفقد
+        المشتري ثقته فيه. راجِع بياناتك جيداً قبل التوثيق — وإن أردت إضافة معلومة، استخدم خانة
+        الملاحظة المتاحة دائماً.
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        ما هي «ذاكرة الزيت»؟
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        تعرض لك بوضوح متى كان آخر تغيير زيت وكم كيلومتراً قطعت منذ ذلك — لتعرف موعد الصيانة القادمة
+        بنظرة واحدة دون حسابات يدوية.
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        كيف أنشئ تقرير بيع وأشاركه؟
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        من صفحة سيارتك أنشئ تقرير بيع، فيولّد كتيب رابطاً موقّعاً ورمز QR يعرض سجلاتك الموثّقة فقط.
+        الرابط صالح 30 يوماً، وتقدر تلغيه في أي وقت. التقرير وثيقة إرشادية تعكس بياناتك، وليست شهادة
+        رسمية من جهة حكومية.
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        هل بياناتي وصور فواتيري آمنة؟
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        نعم. صورك تُخزَّن في خزانة خاصة مشفّرة لا يصل إليها إلا حسابك عبر روابط مؤقتة. لا نبيع بياناتك
+        ولا نشاركها لأي طرف تسويقي، ونلتزم بنظام حماية البيانات الشخصية (PDPL). للتفاصيل راجع
+        <a href="privacy.html">سياسة الخصوصية</a>.
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        كيف أحذف حسابي وبياناتي؟
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        من التطبيق: الإعدادات ← الحساب ← حذف الحساب. بعد تأكيد هويتك برمز تحقّق تُحذف سياراتك
+        وسجلاتك ووثائقك وصورك فوراً ونهائياً. الحذف إجراء لا يمكن التراجع عنه.
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        هل تغيير العداد أو إدخاله أقل من السابق مسموح؟
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        القراءة الجديدة يجب أن تكون أعلى من آخر قراءة موثّقة. إذا استُبدل عدّاد السيارة فعلاً، يوفّر
+        كتيب مساراً شفّافاً «تم استبدال العداد» توثّقه بصورة وملاحظة — حفاظاً على نزاهة السجل.
+      </div>
+    </details>
+
+  </div>
+
+  <!-- Quick links -->
+  <div class="links">
+    <h2>روابط مفيدة</h2>
+    <div class="links-row">
+      <a href="index.html">الصفحة الرئيسية</a>
+      <a href="index.html#how">كيف يعمل كتيب</a>
+      <a href="privacy.html">سياسة الخصوصية</a>
+      <a href="terms.html">شروط الاستخدام</a>
+      <a href="mailto:hello@alnaser.dev">تواصل معنا</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="foot-brand">
+      <img class="logo" src="images/logo.png" alt="كتيب" width="34" height="34" />
+      <strong>كتيب</strong>
+    </div>
+    <div class="foot-links">
+      <a href="index.html">الرئيسية</a>
+      <a href="privacy.html">سياسة الخصوصية</a>
+      <a href="terms.html">شروط الاستخدام</a>
+    </div>
+    <p class="copy">كتيب — سجل صيانة سيارتك الرقمي · جميع الحقوق محفوظة</p>
+  </footer>
+
+</div>
 </body>
 </html>
