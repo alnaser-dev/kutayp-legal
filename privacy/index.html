@@ -2,143 +2,160 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#6C4FE0" />
   <meta name="robots" content="noindex, nofollow" />
   <title>سياسة الخصوصية — كتيب</title>
+  <link rel="icon" href="../images/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="../images/logo.png" />
   <style>
     :root {
-      --bg: #f7f7f9;
+      --accent: #6C4FE0;
+      --accent-strong: #5a3fd0;
+      --accent-soft: rgba(108, 79, 224, 0.08);
+      --accent-ring: rgba(108, 79, 224, 0.16);
+      --bg-grad-a: #efeafc;
+      --bg-grad-b: #f6f5fb;
       --surface: #ffffff;
-      --text: #1a1a1a;
-      --muted: #666;
-      --accent: #6c4fe0;
-      --border: #e8e8ec;
-      --radius: 14px;
+      --surface-2: #faf9ff;
+      --text: #16142a;
+      --muted: #5f5d72;
+      --faint: #9b99ad;
+      --border: #ebe9f4;
+      --green: #2e9e5b;
+      --radius: 16px;
+      --radius-lg: 22px;
+      --shadow-soft: 0 12px 32px -16px rgba(74, 54, 160, 0.28);
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #111118;
-        --surface: #1e1e28;
-        --text: #f0f0f4;
-        --muted: #999;
-        --border: #2e2e3a;
+        --accent: #8a72f0;
+        --accent-strong: #9b86f5;
+        --accent-soft: rgba(138, 114, 240, 0.14);
+        --accent-ring: rgba(138, 114, 240, 0.22);
+        --bg-grad-a: #14111f;
+        --bg-grad-b: #0c0c12;
+        --surface: #16151f;
+        --surface-2: #1c1b27;
+        --text: #f1f0f6;
+        --muted: #a7a5b8;
+        --faint: #6f6d80;
+        --border: #262532;
+        --green: #41c97c;
+        --shadow-soft: 0 12px 32px -16px rgba(0, 0, 0, 0.6);
       }
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
     body {
-      font-family: -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
-      background: var(--bg);
+      font-family: -apple-system, "SF Pro Text", "Segoe UI", Tahoma, Arial, sans-serif;
+      background:
+        radial-gradient(120% 70% at 85% -10%, var(--accent-soft) 0%, transparent 55%),
+        linear-gradient(180deg, var(--bg-grad-a) 0%, var(--bg-grad-b) 38%);
+      background-attachment: fixed;
       color: var(--text);
-      line-height: 1.8;
+      line-height: 1.85;
       font-size: 16px;
-      padding: 24px 16px;
+      -webkit-font-smoothing: antialiased;
+      -webkit-tap-highlight-color: transparent;
+      overflow-x: hidden;
     }
-    .container {
-      max-width: 720px;
+    .wrap {
+      max-width: 760px;
       margin: 0 auto;
+      padding:
+        env(safe-area-inset-top)
+        max(16px, env(safe-area-inset-right))
+        env(safe-area-inset-bottom)
+        max(16px, env(safe-area-inset-left));
     }
-    header {
-      text-align: center;
-      padding: 40px 24px 32px;
+
+    /* Nav */
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
+    .brand .logo { width: 40px; height: 40px; border-radius: 12px; display: block; object-fit: cover; box-shadow: var(--shadow-soft); }
+    .brand .name { font-weight: 800; font-size: 19px; letter-spacing: -0.2px; }
+    .nav-cta {
+      display: inline-flex; align-items: center;
+      background: var(--surface); border: 1px solid var(--border); color: var(--text);
+      padding: 10px 18px; border-radius: 999px; font-size: 14px; font-weight: 700;
+      text-decoration: none; transition: transform .15s ease, border-color .15s ease;
     }
-    .logo {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      font-size: 22px;
-      font-weight: 800;
-      padding: 10px 28px;
-      border-radius: 999px;
-      margin-bottom: 20px;
-      letter-spacing: 0.5px;
-    }
-    header h1 {
-      font-size: 26px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    header p {
-      color: var(--muted);
-      font-size: 14px;
-    }
+    .nav-cta:active { transform: scale(.97); }
+
+    /* Header */
+    header.page { text-align: center; padding: 22px 0 18px; }
+    header.page .kicker { color: var(--accent); font-weight: 800; font-size: 13px; letter-spacing: 0.4px; }
+    header.page h1 { font-size: clamp(26px, 7vw, 34px); font-weight: 800; letter-spacing: -0.5px; line-height: 1.25; margin: 8px 0 10px; }
+    header.page .meta { color: var(--faint); font-size: 13px; }
+
+    /* Cards */
     .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px 28px;
-      margin-bottom: 16px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 22px 20px; margin-bottom: 14px;
+      box-shadow: var(--shadow-soft);
     }
-    h2 {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 14px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--border);
+    .card h2 {
+      font-size: 17px; font-weight: 800; color: var(--accent);
+      margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--border);
     }
-    h3 {
-      font-size: 15px;
-      font-weight: 700;
-      margin: 16px 0 8px;
-    }
-    p { margin-bottom: 12px; }
-    p:last-child { margin-bottom: 0; }
-    ul {
-      margin: 8px 0 12px 0;
-      padding-right: 20px;
-    }
-    li {
-      margin-bottom: 6px;
+    .card h3 { font-size: 15px; font-weight: 800; margin: 18px 0 6px; }
+    .card p { margin-bottom: 12px; }
+    .card p:last-child { margin-bottom: 0; }
+    .card ul { margin: 8px 0 12px; padding-inline-start: 20px; }
+    .card li { margin-bottom: 6px; }
+    .card a { color: var(--accent); word-break: break-word; }
+
+    .badge {
+      display: inline-block; background: var(--accent-soft); color: var(--accent);
+      font-size: 12px; font-weight: 800; padding: 4px 12px; border-radius: 999px; margin-bottom: 12px;
     }
     .highlight {
-      background: rgba(108, 79, 224, 0.07);
-      border-right: 3px solid var(--accent);
-      border-radius: 6px;
-      padding: 12px 16px;
-      margin: 14px 0;
-      font-size: 15px;
+      background: var(--accent-soft); border-inline-start: 3px solid var(--accent);
+      border-radius: 8px; padding: 12px 16px; margin: 14px 0; font-size: 15px;
     }
-    .badge {
-      display: inline-block;
-      background: rgba(46, 158, 91, 0.12);
-      color: #2e9e5b;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 999px;
-      margin-bottom: 10px;
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto; -webkit-overflow-scrolling: touch;
+      border: 1px solid var(--border); border-radius: 12px; margin: 12px 0;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 8px 0;
-      font-size: 14px;
+    table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 460px; }
+    th, td { border-bottom: 1px solid var(--border); border-inline-start: 1px solid var(--border); padding: 10px 12px; text-align: right; vertical-align: top; }
+    th:first-child, td:first-child { border-inline-start: none; }
+    tr:last-child td { border-bottom: none; }
+    th { background: var(--accent-soft); font-weight: 800; }
+
+    /* Footer */
+    footer { padding: 16px 0 36px; text-align: center; }
+    .foot-brand { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .foot-brand .logo { width: 32px; height: 32px; border-radius: 10px; display: block; object-fit: cover; }
+    .foot-links { display: flex; flex-wrap: wrap; gap: 4px 20px; justify-content: center; margin-bottom: 10px; }
+    .foot-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 600; padding: 4px 0; }
+    .copy { color: var(--faint); font-size: 12px; }
+
+    @media (min-width: 600px) {
+      .card { padding: 28px 28px; }
+      header.page { padding: 36px 0 24px; }
     }
-    th, td {
-      border: 1px solid var(--border);
-      padding: 10px 12px;
-      text-align: right;
-      vertical-align: top;
-    }
-    th {
-      background: rgba(108, 79, 224, 0.06);
-      font-weight: 700;
-    }
-    footer {
-      text-align: center;
-      color: var(--muted);
-      font-size: 13px;
-      padding: 32px 0 24px;
-    }
-    a { color: var(--accent); }
+    @media (max-width: 520px) { .nav-cta { display: none; } }
   </style>
 </head>
 <body>
-<div class="container">
-  <header>
-    <div class="logo">كتيب</div>
+<div class="wrap">
+
+  <nav>
+    <a class="brand" href="../">
+      <img class="logo" src="../images/logo.png" alt="كتيب" width="40" height="40" />
+      <span class="name">كتيب</span>
+    </a>
+    <a class="nav-cta" href="../">الصفحة الرئيسية</a>
+  </nav>
+
+  <header class="page">
+    <span class="kicker">الخصوصية</span>
     <h1>سياسة الخصوصية</h1>
-    <p>آخر تحديث: 16 يونيو 2026 · سارية من تاريخ النشر</p>
+    <p class="meta">آخر تحديث: 16 يونيو 2026 · سارية من تاريخ النشر</p>
   </header>
 
   <div class="card">
@@ -246,23 +263,25 @@
       نحن لا نبيع بياناتك الشخصية ولا نؤجّرها ولا نتاجر بها لأي طرف ثالث، تحت أي ظرف.
     </div>
     <p>المعالِجون من الباطن (sub-processors) الذين نشاركهم الحد الأدنى اللازم لتشغيل الخدمة:</p>
-    <table>
-      <tr>
-        <th>الجهة</th>
-        <th>الغرض</th>
-        <th>البيانات</th>
-      </tr>
-      <tr>
-        <td>Supabase</td>
-        <td>قاعدة البيانات، المصادقة، تخزين الملفات، تسليم رمز البريد</td>
-        <td>بيانات الحساب والسيارات والسجلات والصور المحفوظة</td>
-      </tr>
-      <tr>
-        <td>Google (Gemini)</td>
-        <td>استخراج نص الفاتورة (OCR) — بموافقتك</td>
-        <td>صورة الفاتورة مؤقتاً فقط، لا تُحفظ</td>
-      </tr>
-    </table>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>الجهة</th>
+          <th>الغرض</th>
+          <th>البيانات</th>
+        </tr>
+        <tr>
+          <td>Supabase</td>
+          <td>قاعدة البيانات، المصادقة، تخزين الملفات، تسليم رمز البريد</td>
+          <td>بيانات الحساب والسيارات والسجلات والصور المحفوظة</td>
+        </tr>
+        <tr>
+          <td>Google (Gemini)</td>
+          <td>استخراج نص الفاتورة (OCR) — بموافقتك</td>
+          <td>صورة الفاتورة مؤقتاً فقط، لا تُحفظ</td>
+        </tr>
+      </table>
+    </div>
     <p>
       لا نشارك بيانات السيارة أو سجلات الصيانة أو معلومات حسابك مع أي جهة تسويقية أو تجارية. قد
       نُفصِح عن بيانات إذا طُلب ذلك نظاماً من جهة قضائية أو تنظيمية مختصة في المملكة، وفي أضيق الحدود.
@@ -364,11 +383,18 @@
   </div>
 
   <footer>
-    <p>كتيب — سجل صيانة سيارتك الرقمي</p>
-    <p style="margin-top: 6px;">
+    <div class="foot-brand">
+      <img class="logo" src="../images/logo.png" alt="كتيب" width="32" height="32" />
+      <strong>كتيب</strong>
+    </div>
+    <div class="foot-links">
+      <a href="../">الرئيسية</a>
       <a href="../terms/">شروط الاستخدام</a>
-    </p>
+      <a href="../support/">الدعم</a>
+    </div>
+    <p class="copy">كتيب — سجل صيانة سيارتك الرقمي · جميع الحقوق محفوظة</p>
   </footer>
+
 </div>
 </body>
 </html>
