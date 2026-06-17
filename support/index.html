@@ -143,7 +143,7 @@
     /* Footer */
     footer { padding: 12px 0 56px; text-align: center; }
     .foot-brand { margin-bottom: 14px; }
-    .foot-wordmark { height: 32px; width: auto; display: block; margin: 0 auto; }
+    .foot-wordmark { width: min(152px, 44vw); height: auto; display: block; margin: 0 auto; }
     .foot-links { display: flex; flex-wrap: wrap; gap: 6px 22px; justify-content: center; margin-bottom: 14px; }
     .foot-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 600; transition: color .15s ease; }
     .foot-links a:hover { color: var(--accent); }
@@ -319,7 +319,7 @@
     <div class="foot-brand">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="../images/wordmark-dark.png" />
-        <img class="foot-wordmark" src="../images/wordmark-light.png" alt="كُتَيّب" height="32" />
+        <img class="foot-wordmark" src="../images/wordmark-light.png" alt="كُتَيّب" />
       </picture>
     </div>
     <div class="foot-links">
