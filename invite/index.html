@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="افتح دعوة مشاركة سيارة في تطبيق كتيب." />
+  <meta name="theme-color" content="#6248DB" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0c0c12" media="(prefers-color-scheme: dark)" />
+  <title>دعوة لمشاركة سيارة — كتيب</title>
+  <link rel="icon" href="../images/app-icon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="../images/app-icon.png" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --accent: #6248DB;
+      --accent-strong: #4F36C4;
+      --accent-soft: rgba(98, 72, 219, 0.08);
+      --accent-ring: rgba(98, 72, 219, 0.16);
+      --bg: #f4f5f8;
+      --bg-grad: #ece9f8;
+      --surface: #ffffff;
+      --text: #16142a;
+      --muted: #5f5d72;
+      --border: #ecebf3;
+      --radius: 22px;
+      --shadow: 0 18px 50px -20px rgba(74, 54, 160, 0.35);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --accent: #9578F5;
+        --accent-strong: #A88FF7;
+        --accent-soft: rgba(149, 120, 245, 0.14);
+        --accent-ring: rgba(149, 120, 245, 0.24);
+        --bg: #0c0c12;
+        --bg-grad: #14111f;
+        --surface: #16151f;
+        --text: #f1f0f6;
+        --muted: #a7a5b8;
+        --border: #262532;
+        --shadow: 0 22px 60px -24px rgba(0, 0, 0, 0.7);
+      }
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Arabic", "Segoe UI", Tahoma, Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: max(24px, env(safe-area-inset-top)) 20px max(24px, env(safe-area-inset-bottom));
+      background:
+        radial-gradient(120% 60% at 90% -10%, var(--accent-soft) 0%, transparent 55%),
+        linear-gradient(180deg, var(--bg-grad) 0%, var(--bg) 38%);
+      background-attachment: fixed;
+    }
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 34px 26px 30px;
+      text-align: center;
+    }
+    .logo {
+      width: 76px; height: 76px;
+      border-radius: 20px;
+      object-fit: contain;
+      margin: 0 auto 18px;
+      display: block;
+      box-shadow: 0 10px 26px -12px rgba(74, 54, 160, 0.45);
+    }
+    h1 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    p.sub { color: var(--muted); font-size: 15px; margin-bottom: 24px; }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 15px 18px;
+      border-radius: 14px;
+      font-size: 16px; font-weight: 700;
+      text-decoration: none;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform .15s ease, opacity .15s ease;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-secondary {
+      background: transparent; color: var(--text);
+      border-color: var(--border);
+      margin-top: 12px;
+    }
+    .note { color: var(--muted); font-size: 13px; margin-top: 22px; line-height: 1.6; }
+    .error { color: var(--accent-strong); font-size: 14px; margin-top: 16px; }
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img class="logo" src="../images/app-icon.png" alt="كتيب" />
+    <h1>دُعيت لمشاركة سيارة</h1>
+    <p class="sub" id="sub">افتح الدعوة في تطبيق كتيب لمتابعة الصيانة مع المالك.</p>
+
+    <div id="actions">
+      <a class="btn btn-primary" id="openApp" href="#">فتح في تطبيق كتيب</a>
+      <a class="btn btn-secondary" id="appStore"
+         href="https://apps.apple.com/app/%D9%83%D8%AA%D9%8A%D8%A8/id6781482309"
+         target="_blank" rel="noopener">تحميل التطبيق من App Store</a>
+      <p class="note">إن كان التطبيق مثبّتاً، اضغط «فتح في تطبيق كتيب». بعد تسجيل الدخول بحسابك ستظهر السيارة مباشرة لديك.</p>
+    </div>
+
+    <p class="error hidden" id="error">رابط الدعوة غير صالح أو منتهي الصلاحية.</p>
+  </div>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var token = params.get('token');
+      var openApp = document.getElementById('openApp');
+      var actions = document.getElementById('actions');
+      var error = document.getElementById('error');
+
+      if (!token || !/^[a-f0-9]{16,}$/i.test(token)) {
+        actions.classList.add('hidden');
+        error.classList.remove('hidden');
+        return;
+      }
+
+      var deepLink = 'kutaib://join?token=' + encodeURIComponent(token);
+      openApp.setAttribute('href', deepLink);
+
+      // Best-effort auto-open on first load; the visible buttons remain as the
+      // reliable fallback (and for desktop / app-not-installed).
+      var triedAuto = false;
+      function tryOpen() {
+        if (triedAuto) return;
+        triedAuto = true;
+        window.location.href = deepLink;
+      }
+      // Only auto-attempt on mobile where a custom scheme can resolve.
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        setTimeout(tryOpen, 350);
+      }
+      openApp.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.location.href = deepLink;
+      });
+    })();
+  </script>
+</body>
+</html>
