@@ -284,6 +284,7 @@
     .step .num::before { content: counter(step); }
     .step h3 { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
     .step p { color: var(--muted); font-size: 15px; }
+    .step .detail { margin-top: 8px; font-size: 14px; line-height: 1.65; color: var(--faint); }
 
     /* ---------- Trust ---------- */
     .trust {
@@ -434,58 +435,29 @@
     </div>
   </header>
 
-  <!-- Features -->
-  <section id="features">
-    <div class="sec-head">
-      <span class="kicker">لماذا كتيب؟</span>
-      <h2>ثلاثة أمور في تطبيق واحد</h2>
-    </div>
-    <div class="grid">
-      <div class="feature">
-        <div class="ficon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        </div>
-        <h3>صوّر الفاتورة</h3>
-        <p>يستخرج التاريخ والعداد ونوع الخدمة — تراجع وتؤكد.</p>
-      </div>
-      <div class="feature">
-        <div class="ficon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
-        </div>
-        <h3>عمر الزيت</h3>
-        <p>آخر تغيير زيت وكم قطعت منذها.</p>
-      </div>
-      <div class="feature">
-        <div class="ficon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3>تقرير الصيانة</h3>
-        <p>لقطة للمشاركة برابط أو QR — كل سجل مع وسم «بفاتورة / بلا فاتورة».</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- How it works -->
+  <!-- How it works (merged: steps + product capabilities) -->
   <section id="how">
     <div class="sec-head">
-      <span class="kicker">ثلاث خطوات</span>
-      <h2>من الفاتورة إلى كتيب كامل</h2>
+      <span class="kicker">كيف يعمل؟</span>
+      <h2>ثلاث خطوات في تطبيق واحد</h2>
     </div>
     <div class="steps">
       <div class="step">
         <div class="num"></div>
         <h3>أضف سيارتك</h3>
-        <p>الماركة والموديل والعداد.</p>
+        <p>الماركة والموديل وقراءة العداد — كتيب مستقل لكل سيارة.</p>
       </div>
       <div class="step">
         <div class="num"></div>
         <h3>سجّل الصيانة</h3>
-        <p>صوّر الفاتورة أو أدخل يدوياً.</p>
+        <p>صوّر الفاتورة فيستخرج كتيب التاريخ والعداد ونوع الخدمة — تراجع وتؤكد. أو أدخل يدوياً بدون فاتورة.</p>
+        <p class="detail">كل سجل يُضاف إلى سجل الصيانة؛ وتغيير الزيت يُحدّث «عمر الزيت» — آخر تغيير وكم قطعت منذها.</p>
       </div>
       <div class="step">
         <div class="num"></div>
-        <h3>شارك التقرير</h3>
-        <p>رابط أو QR — لقطة للعرض فقط.</p>
+        <h3>شارك تقرير الصيانة</h3>
+        <p>لقطة مجمّدة من سجلك برابط أو QR — للعرض فقط وقت الإنشاء.</p>
+        <p class="detail">كل سجل في التقرير مع وسم «بفاتورة / بلا فاتورة».</p>
       </div>
     </div>
   </section>
