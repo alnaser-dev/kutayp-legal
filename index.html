@@ -242,7 +242,7 @@
     .sec-head h2 { font-size: clamp(26px, 3.5vw, 34px); font-weight: 800; letter-spacing: -0.4px; margin: 8px 0 12px; }
     .sec-head p { color: var(--muted); font-size: 17px; }
 
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
     .feature {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -261,6 +261,14 @@
     .feature .ficon svg { width: 26px; height: 26px; }
     .feature h3 { font-size: 19px; font-weight: 800; margin-bottom: 8px; }
     .feature p { color: var(--muted); font-size: 15px; }
+    .sec-more {
+      text-align: center;
+      color: var(--muted);
+      font-size: 16px;
+      margin-top: 32px;
+      max-width: 520px;
+      margin-inline: auto;
+    }
 
     /* ---------- Trust ---------- */
     .trust {
@@ -436,7 +444,22 @@
         <h3>تقرير الصيانة</h3>
         <p>استخرج سجل الصيانة كاملاً كتقرير منظم — برابط أو QR. كل سجل مع وسم «بفاتورة / بلا فاتورة».</p>
       </div>
+      <div class="feature">
+        <div class="ficon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>مشاركة السيارة</h3>
+        <p>ادعُ شخصاً ليشاركك إدارة كتيب السيارة — برابط أو QR. يضيف ويعدّل السجلات معك.</p>
+      </div>
+      <div class="feature">
+        <div class="ficon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </div>
+        <h3>عدة سيارات</h3>
+        <p>كتيب مستقل لكل سيارة — تنتقل بين سياراتك بسهولة في تطبيق واحد.</p>
+      </div>
     </div>
+    <p class="sec-more">…والمزيد في التطبيق: وثائق السيارة، بحث السجلات، ومن ذلك.</p>
   </section>
 
   <!-- Trust / privacy -->
